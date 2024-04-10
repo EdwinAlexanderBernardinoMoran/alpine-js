@@ -3,21 +3,21 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <script defer src="./alpine-cdn.min.js"></script>
+    <script defer src="/alpine-cdn.min.js"></script>
     <title>Alpine - JS</title>
 </head>
 <body>
 
     <!-- Inicializacion y Definicion de variable -->
-    <div x-data="{ open: false}">
+    <div x-data="data()" x-init="start()">
 
         <!-- Los Eventos se ejecutan cada vez que desencadenamos una accion -->
-        <button x-on:click="open = !open">
+        <button x-on:click="isOpen()">
             Menu
         </button>
 
         <!-- x-show recibe un valor booleano -->
-        <nav x-show="open" x-on:click.away="open = false">
+        <nav x-show="open" x-on:click.away="close()">
             <ul>
                 <li>Item 1</li>
                 <li>Item 2</li>
@@ -26,5 +26,7 @@
             </ul>
         </nav>
     </div>
+
+    <script src="./app.js"></script>
 </body>
 </html>
