@@ -1,1 +1,5 @@
 Alpine Js es una libreria de JavaScript que agrega interactividad a nuestras paginas del lado del Cliente, Livewire es un framework que se ejecuta del lado del servidor
+
+Componentes de inicializacion = ( x-data, x-init )
+
+Atributos dinamicos = ( x-bind)

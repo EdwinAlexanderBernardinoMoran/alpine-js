@@ -3,8 +3,14 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <script defer src="../alpine-cdn.min.js"></script>
+    <script defer src="../alpine-cdn.min.js "></script>
     <title>Alpine - JS</title>
+
+    <style>
+        .hidden{
+            display: none;
+        }
+    </style>
 </head>
 <body>
 
@@ -12,12 +18,21 @@
     <div x-data="data()" x-init="start()">
 
         <!-- Los Eventos se ejecutan cada vez que desencadenamos una accion -->
-        <button x-on:click="isOpen()">
+        <button :disabled="open" @click="isOpen()">
             Menu
         </button>
 
         <!-- x-show recibe un valor booleano -->
-        <nav x-show="open" x-on:click.away="close()">
+        <!-- <nav x-show="open" @click.away="close()">
+            <ul>
+                <li>Item 1</li>
+                <li>Item 2</li>
+                <li>Item 3</li>
+                <li>Item 4</li>
+            </ul>
+        </nav> -->
+
+        <nav class="hidden" :class="{'hidden': !open}">
             <ul>
                 <li>Item 1</li>
                 <li>Item 2</li>
