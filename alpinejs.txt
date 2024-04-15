@@ -2,4 +2,7 @@ Alpine Js es una libreria de JavaScript que agrega interactividad a nuestras pag
 
 Componentes de inicializacion = ( x-data, x-init )
 
-Atributos dinamicos = ( x-bind)
+Atributos dinamicos = ( x-bind:)
+Inicializacion = ( x-data, x-init )
+Eventos = (x-on:click)
+Sincronizar = ( x-ref = Valor donde aras referencia para imprimir el dato del model, x-model = Se le aplica al campo, que quieres sincronizar)

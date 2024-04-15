@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>04 Bucles Y Condicionales</title>
+    <script defer src="../alpine-cdn.min.js"></script>
+</head>
+<body>
+    
+    <div x-data="dataTwo()">
+        <ul>
+            <!-- <template x-for="product in products">
+                <li>
+                    <span x-text="product.stock"></span>
+                    <span x-text="product.name"></span>
+                </li>
+            </template> -->
+
+            <template x-for="product in Object.values(products)">
+                <li>
+                    <span x-text="product.stock"></span>
+                    <span x-text="product.name"></span>
+
+                    <template x-if="product.stock == 0">
+                        <span>(Sin stock)</span>
+                    </template>
+                </li>
+            </template>
+        </ul>
+    </div>
+
+    <script>
+
+        // pisilidad # 1
+        function data(){
+            return {
+                products: [
+                    {   
+                        id: 1,
+                        name: 'pantalon',
+                        stock: 5
+                    },
+                    {   
+                        id: 2,
+                        name: 'camisa',
+                        stock: 9
+                    },
+                    {   
+                        id: 3,
+                        name: 'casaca',
+                        stock: 5
+                    },
+                    {   
+                        id: 4,
+                        name: 'zapatos',
+                        stock: 7
+                    }
+                ]
+            }
+        }
+
+        function dataTwo(){
+            return {
+                products: {
+                    1:{   
+                        id: 1,
+                        name: 'pantalon',
+                        stock: 5
+                    },
+                    2:{   
+                        id: 2,
+                        name: 'camisa',
+                        stock: 9
+                    },
+                    3:{   
+                        id: 3,
+                        name: 'casaca',
+                        stock: 5
+                    },
+                    4:{   
+                        id: 4,
+                        name: 'zapatos',
+                        stock: 0
+                    }
+                }
+            }
+        }
+    </script>
+</body>
+</html>
