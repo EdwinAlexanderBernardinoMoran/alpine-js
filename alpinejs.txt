@@ -4,5 +4,7 @@ Componentes de inicializacion = ( x-data, x-init )
 
 Atributos dinamicos = ( x-bind:)
 Inicializacion = ( x-data, x-init )
-Eventos = (x-on:click)
+Eventos = (x-on:click, x-submit)
 Sincronizar = ( x-ref = Valor donde aras referencia para imprimir el dato del model, x-model = Se le aplica al campo, que quieres sincronizar)
+
+Todos los eventos tienen modificadores, y se expresan despues del punto, ejemplo (@submit.prevent, @click.away)

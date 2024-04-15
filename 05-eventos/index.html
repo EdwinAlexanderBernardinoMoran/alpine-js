@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="../alpine-cdn.min.js"></script>
+    <title>Eventos - Alpine</title>
+</head>
+<body>
+    
+    <div x-data="{message: null}">
+        <button @click="console.log('Hola mundo')">Hazme Click</button>
+
+        <form action="" @submit.prevent="console.log(message)">
+            <input type="text" x-model="message">
+
+            <button @click="$refs.me.innerText=message">Enviar</button>
+        </form>
+
+        <p x-ref="me"></p>
+    </div>
+
+    <!-- Evento @keydown -->
+    <div x-data="{message: null}">
+
+        <!-- Se dispara cada vez que se presiona una tecla   -->
+        <label for="">Evento Keydown</label>
+        <input type="text" x-model="message" @keydown="console.log(message)">
+
+        <!-- Se dispara cada vez que se presiona la tecla enter -->
+        <label for="">Evento Keydown Enter</label>
+        <input type="text" x-model="message" @keydown.enter="console.log(message)">
+
+        <!-- Se dispara cada vez que se presiona la tecla escape -->
+        <label for="">Evento Keydown Escape</label>
+        <input type="text" x-model="message" @keydown.escape="console.log(message)">
+
+        <!-- Se dispara cada vez que se presiona la tecla hacia abajo -->
+        <label for="">Evento Keydown Tecla hacia abajo</label>
+        <input type="text" x-model="message" @keydown.arrow-down="console.log(message)">
+
+        <!-- Se dispara cada vez que se presiona la tecla hacia arriba -->
+        <label for="">Evento Keydown Tecla hacia abajo</label>
+        <input type="text" x-model="message" @keydown.arrow-up="console.log(message)">
+
+        <!-- Se dispara cada vez que haya una convinacion de teclas ctrl+a -->
+        <label for="">Evento Keydown Tecla hacia abajo</label>
+        <input type="text" x-model="message" @keydown.ctrl.a="console.log(message)">
+    </div>
+
+    <div x-data="{open: true}" @resize.window="open = window.outerWidth > 768 ? true : false">
+
+        <p x-show="open">Solo se mostrara solo en pantallas grandes</p>
+    </div>
+
+</body>
+</html>
