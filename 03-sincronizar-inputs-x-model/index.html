@@ -1,0 +1,16 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>03 Sincronizar inputs x-model</title>
+    <script defer src="../alpine-cdn.min.js"></script>
+</head>
+<body>
+    <div x-data="{message: null}">
+        <input type="text" x-model="message">
+        <button @click="$refs.msj.innerText=message">Enviar</button>
+        <p x-ref="msj"></p>
+    </div>
+</body>
+</html>
